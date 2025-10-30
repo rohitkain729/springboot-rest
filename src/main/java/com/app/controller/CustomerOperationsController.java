@@ -17,6 +17,15 @@ import com.app.model.Customer;
 @RestController
 @RequestMapping("/customer-api")
 public class CustomerOperationsController {
+	
+	
+//	for gettting data in xml or json use below dependency
+//	<dependency>
+//	<groupId>com.fasterxml.jackson.dataformat</groupId>
+//	<artifactId>jackson-dataformat-xml</artifactId>
+//	<version>2.19.2</version>
+//</dependency>
+
 
 	@GetMapping("/report")
 	public ResponseEntity<Customer> showReport() {

@@ -32,4 +32,12 @@ public class ActorOperationsApi {
 		return new ResponseEntity<String>(actor.toString(), HttpStatus.CREATED);
 	}
 
+	@GetMapping("/report")
+	public ResponseEntity<Actor> showData() {
+		
+		Actor ac = new Actor(11, "rohit", "india", 4500.00, "hero");
+
+		return new ResponseEntity<Actor>(ac, HttpStatus.OK);
+	}
+
 }

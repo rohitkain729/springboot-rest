@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-@Service
+//@Service
 public class ActorApiConsumerTestRunner implements CommandLineRunner {
 
 	@Autowired
@@ -48,6 +48,9 @@ public class ActorApiConsumerTestRunner implements CommandLineRunner {
 		ResponseEntity<String> responsebody = restTemplate.exchange(baseurl, HttpMethod.POST, entity, String.class);
 
 		System.out.println(responsebody.getBody());
+		
+		
+//		rest.getForObject(null, null)
 
 	
 	}

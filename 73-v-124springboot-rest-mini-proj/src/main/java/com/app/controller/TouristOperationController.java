@@ -18,14 +18,24 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.entity.Tourist;
 import com.app.service.ITouristMgmtService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/tourist")
+@Tag(name = "Tourist",description = "Tourist Operations Controller")
 public class TouristOperationController {
 
 	@Autowired
 	private ITouristMgmtService service;
 
 	@PostMapping("/save")
+	@Operation(summary = "save the toursit",description = "insert the tourist info")
+	@ApiResponses(value= {
+			@ApiResponse(responseCode = "201",description = "successful operation")
+	})
 	public ResponseEntity<String> saveTourist(@RequestBody Tourist t) {
 
 		try {
@@ -37,6 +47,9 @@ public class TouristOperationController {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	
+	
 
 	@GetMapping("/all")
 	public ResponseEntity<Object> getAllTourist() {

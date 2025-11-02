@@ -52,8 +52,8 @@ public class TouristOperationController {
 	
 
 	@GetMapping("/all")
-	public ResponseEntity<Object> getAllTourist() {
-		ResponseEntity<Object> resp = null;
+	public ResponseEntity<?> getAllTourist() {
+		ResponseEntity<?> resp = null;
 		try {
 			List<Tourist> list = service.getAllTourist();
 			return resp = new ResponseEntity<Object>(list, HttpStatus.OK);
